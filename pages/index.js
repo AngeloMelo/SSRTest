@@ -11,7 +11,8 @@ const Index = (props) => (
 )
 
 Index.getInitialProps = async () =>{
-    const endpoint = 'https://api.nasa.gov/planetary/apod?api_key=pUcRnAgMtZlSZqgvtHEU6SSBdjfbQr4JC3o13yMM'
+	const nasaAPiKey = '<MY_NASA_KEY>';
+    const endpoint = `https://api.nasa.gov/planetary/apod?api_key=${nasaAPiKey}`
     const res = await Fetch(endpoint)
     const json = await res.json()
     json.imgurl = json.url;
